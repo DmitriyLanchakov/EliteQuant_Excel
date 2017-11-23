@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cashflows\overnightindexedcoupon.cpp" />
+    <ClCompile Include="indexes\commodityindexext.cpp" />
+    <ClCompile Include="instruments\dateintervalext.cpp" />
+    <ClCompile Include="instruments\energybasisswapext.cpp" />
+    <ClCompile Include="instruments\energycommodityext.cpp" />
+    <ClCompile Include="instruments\energyfutureext.cpp" />
+    <ClCompile Include="instruments\energyswapext.cpp" />
+    <ClCompile Include="instruments\energyvanillaswapext.cpp" />
+    <ClCompile Include="instruments\genericswap.cpp" />
+    <ClCompile Include="instruments\iboroisbasisswap.cpp" />
+    <ClCompile Include="instruments\makegenericswap.cpp" />
+    <ClCompile Include="instruments\makeiboroisbasisswap.cpp" />
+    <ClCompile Include="math\distributions\gammadistribution.cpp" />
+    <ClCompile Include="math\randomnumbers\boostrngbinding.cpp" />
+    <ClCompile Include="math\randomnumbers\threefry.cpp" />
+    <ClCompile Include="termstructures\commodity\commoditycurveext.cpp" />
+    <ClCompile Include="termstructures\volatility\doubleexponentialcalibration.cpp" />
+    <ClCompile Include="termstructures\volatility\svi.cpp" />
+    <ClCompile Include="termstructures\yield\oisbasisratehelper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="qlex.hpp" />
+    <ClInclude Include="cashflows\all.hpp" />
+    <ClInclude Include="cashflows\overnightindexedcoupon.hpp" />
+    <ClInclude Include="indexes\all.hpp" />
+    <ClInclude Include="indexes\commodityindexext.hpp" />
+    <ClInclude Include="instruments\all.hpp" />
+    <ClInclude Include="instruments\dateintervalext.hpp" />
+    <ClInclude Include="instruments\energybasisswapext.hpp" />
+    <ClInclude Include="instruments\energycommodityext.hpp" />
+    <ClInclude Include="instruments\energyfutureext.hpp" />
+    <ClInclude Include="instruments\energyswapext.hpp" />
+    <ClInclude Include="instruments\energyvanillaswapext.hpp" />
+    <ClInclude Include="instruments\genericswap.hpp" />
+    <ClInclude Include="instruments\iboroisbasisswap.hpp" />
+    <ClInclude Include="instruments\makegenericswap.hpp" />
+    <ClInclude Include="instruments\makeiboroisbasisswap.hpp" />
+    <ClInclude Include="instruments\pricingperiodext.hpp" />
+    <ClInclude Include="math\all.hpp" />
+    <ClInclude Include="math\distributions\all.hpp" />
+    <ClInclude Include="math\distributions\gammadistribution.hpp" />
+    <ClInclude Include="math\interpolations\all.hpp" />
+    <ClInclude Include="math\interpolations\sabrinterpolation.hpp" />
+    <ClInclude Include="math\interpolations\sviinterpolation.hpp" />
+    <ClInclude Include="math\interpolations\xabrinterpolation.hpp" />
+    <ClInclude Include="math\randomnumbers\all.hpp" />
+    <ClInclude Include="math\randomnumbers\boostrngbinding.hpp" />
+    <ClInclude Include="math\randomnumbers\counter_based_engine.hpp" />
+    <ClInclude Include="math\randomnumbers\detail\counter_traits.hpp" />
+    <ClInclude Include="math\randomnumbers\detail\mulhilo.hpp" />
+    <ClInclude Include="math\randomnumbers\detail\rotl.hpp" />
+    <ClInclude Include="math\randomnumbers\philox.hpp" />
+    <ClInclude Include="math\randomnumbers\sha1_prf.hpp" />
+    <ClInclude Include="math\randomnumbers\threefry.hpp" />
+    <ClInclude Include="risks\all.hpp" />
+    <ClInclude Include="Settings.hpp" />
+    <ClInclude Include="termstructures\all.hpp" />
+    <ClInclude Include="termstructures\commodity\all.hpp" />
+    <ClInclude Include="termstructures\commodity\commoditycurveext.hpp" />
+    <ClInclude Include="termstructures\multibootstrap.hpp" />
+    <ClInclude Include="termstructures\volatility\all.hpp" />
+    <ClInclude Include="termstructures\volatility\doubleexponentialcalibration.hpp" />
+    <ClInclude Include="termstructures\volatility\svi.hpp" />
+    <ClInclude Include="termstructures\yield\all.hpp" />
+    <ClInclude Include="termstructures\yield\oisbasisratehelper.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\SwigConversionLayer\swig\quantlib.i">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">quantlib_wrap.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">quantlib_wrap.cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">echo Invoking SWIG CSharp ...
+
+echo on
+
+D:\Workspace\swigwin\swig.exe -csharp -c++ -outdir "..\..\SwigConversionLayer\csharp" -namespace EliteQuant -o "..\..\SwigConversionLayer\cpp\quantlib_wrap.cpp" "..\..\SwigConversionLayer\swig\quantlib.i"
+
+echo off</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">echo Invoking SWIG CSharp ...
+echo on
+D:\Workspace\swigwin\swig.exe -csharp -c++ -outdir "..\..\SwigConversionLayer\csharp" -namespace EliteQuant -o "..\..\SwigConversionLayer\cpp\quantlib_wrap.cpp" "..\..\SwigConversionLayer\swig\quantlib.i"
+echo off</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">echo Invoking SWIG CSharp ...
+echo on
+D:\Workspace\swigwin\swig.exe -csharp -c++ -outdir "..\..\SwigConversionLayer\csharp" -namespace EliteQuant -o "..\..\SwigConversionLayer\cpp\quantlib_wrap.cpp" "..\..\SwigConversionLayer\swig\quantlib.i"
+echo off</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">echo Invoking SWIG CSharp ...
+echo on
+D:\Workspace\swigwin\swig.exe -csharp -c++ -outdir "..\..\SwigConversionLayer\csharp" -namespace EliteQuant -o "..\..\SwigConversionLayer\cpp\quantlib_wrap.cpp" "..\..\SwigConversionLayer\swig\quantlib.i"
+echo off</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">quantlib_wrap.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">quantlib_wrap.cpp</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CE998296-020C-44AD-B377-6925FAD8EC98}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>QLExtension</RootNamespace>
+    <ProjectName>QLExtension</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\Output\$(Configuration)\$(PlatformTarget)</OutDir>
+    <IntDir>$(SolutionDir)\Output\build\$(ProjectName)\$(Configuration)\$(PlatformTarget)</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\Output\$(Configuration)\$(PlatformTarget)</OutDir>
+    <IntDir>$(SolutionDir)\Output\build\$(ProjectName)\$(Configuration)\$(PlatformTarget)</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\Output\$(Configuration)\$(PlatformTarget)</OutDir>
+    <IntDir>$(SolutionDir)\Output\build\$(ProjectName)\$(Configuration)\$(PlatformTarget)</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\Output\$(Configuration)\$(PlatformTarget)</OutDir>
+    <IntDir>$(SolutionDir)\Output\build\$(ProjectName)\$(Configuration)\$(PlatformTarget)</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;QLEX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Workspace\boost;D:\Workspace\QuantLib;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile />
+      <AdditionalOptions>-D_SCL_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\Workspace\QuantLib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>D:\Workspace\boost\stage\lib;D:\Workspace\QuantLib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;QLEX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Workspace\boost;D:\Workspace\QuantLib;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AdditionalOptions>-D_SCL_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\Workspace\QuantLib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>D:\Workspace\boost\stage\lib;D:\Workspace\QuantLib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;QLEX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Workspace\boost;D:\Workspace\QuantLib;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile />
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>D:\Workspace\boost\stage\lib;D:\Workspace\QuantLib\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;QLEX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Workspace\boost;D:\Workspace\QuantLib;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>CD:\Workspace\boost\stage\lib;D:\Workspace\QuantLib\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

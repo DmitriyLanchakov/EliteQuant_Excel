@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="cashflows">
+      <UniqueIdentifier>{a98fe05f-9352-407c-8a51-9da71b85cb8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="indexes">
+      <UniqueIdentifier>{d0c4dc6b-26c7-4c90-b8d6-4a59d4eb46c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math">
+      <UniqueIdentifier>{e9c11892-4c21-4e71-ab24-e3b162eff323}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math\randomnumbers">
+      <UniqueIdentifier>{9668c4ba-6e01-4edc-b141-f583659bb893}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math\randomnumbers\detail">
+      <UniqueIdentifier>{be2e2ff6-e391-4d09-bf9f-dc21a8ef5241}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="risks">
+      <UniqueIdentifier>{54223ba7-b04f-417f-921b-bf54428ddaeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="termstructures">
+      <UniqueIdentifier>{2abe5650-eb21-4877-ab77-cd3d03f96692}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math\interpolations">
+      <UniqueIdentifier>{3759d8e3-7fc7-4162-bfff-82e777c85aeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="termstructures\commodity">
+      <UniqueIdentifier>{1c647861-1ce4-4d88-8488-a204497bd4a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="termstructures\volatility">
+      <UniqueIdentifier>{86ee4d30-9e51-442d-9e8a-249a965ff879}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="instruments">
+      <UniqueIdentifier>{9e997e55-850a-4bc0-a18b-5c3d82eab4b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="termstructures\yield">
+      <UniqueIdentifier>{18014e96-caeb-41ba-9c7e-e91a2f2e2eb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math\distributions">
+      <UniqueIdentifier>{b6bf20c8-1953-478b-a44c-1c5e7a31d945}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="termstructures\volatility\svi.cpp">
+      <Filter>termstructures\volatility</Filter>
+    </ClCompile>
+    <ClCompile Include="termstructures\volatility\doubleexponentialcalibration.cpp">
+      <Filter>termstructures\volatility</Filter>
+    </ClCompile>
+    <ClCompile Include="math\distributions\gammadistribution.cpp">
+      <Filter>math\distributions</Filter>
+    </ClCompile>
+    <ClCompile Include="math\randomnumbers\boostrngbinding.cpp">
+      <Filter>math\randomnumbers</Filter>
+    </ClCompile>
+    <ClCompile Include="math\randomnumbers\threefry.cpp">
+      <Filter>math\randomnumbers</Filter>
+    </ClCompile>
+    <ClCompile Include="cashflows\overnightindexedcoupon.cpp">
+      <Filter>cashflows</Filter>
+    </ClCompile>
+    <ClCompile Include="instruments\iboroisbasisswap.cpp">
+      <Filter>instruments</Filter>
+    </ClCompile>
+    <ClCompile Include="instruments\makeiboroisbasisswap.cpp">
+      <Filter>instruments</Filter>
+    </ClCompile>
+    <ClCompile Include="termstructures\yield\oisbasisratehelper.cpp">
+      <Filter>termstructures\yield</Filter>
+    </ClCompile>
+    <ClCompile Include="instruments\genericswap.cpp">
+      <Filter>instruments</Filter>
+    </ClCompile>
+    <ClCompile Include="instruments\makegenericswap.cpp">
+      <Filter>instruments</Filter>
+    </ClCompile>
+    <ClCompile Include="indexes\commodityindexext.cpp">
+      <Filter>indexes</Filter>
+    </ClCompile>
+    <ClCompile Include="instruments\dateintervalext.cpp">
+      <Filter>instruments</Filter>
+    </ClCompile>
+    <ClCompile Include="instruments\energybasisswapext.cpp">
+      <Filter>instruments</Filter>
+    </ClCompile>
+    <ClCompile Include="instruments\energycommodityext.cpp">
+      <Filter>instruments</Filter>
+    </ClCompile>
+    <ClCompile Include="instruments\energyfutureext.cpp">
+      <Filter>instruments</Filter>
+    </ClCompile>
+    <ClCompile Include="instruments\energyswapext.cpp">
+      <Filter>instruments</Filter>
+    </ClCompile>
+    <ClCompile Include="instruments\energyvanillaswapext.cpp">
+      <Filter>instruments</Filter>
+    </ClCompile>
+    <ClCompile Include="termstructures\commodity\commoditycurveext.cpp">
+      <Filter>termstructures\commodity</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="math\randomnumbers\boostrngbinding.hpp">
+      <Filter>math\randomnumbers</Filter>
+    </ClInclude>
+    <ClInclude Include="math\randomnumbers\counter_based_engine.hpp">
+      <Filter>math\randomnumbers</Filter>
+    </ClInclude>
+    <ClInclude Include="math\randomnumbers\philox.hpp">
+      <Filter>math\randomnumbers</Filter>
+    </ClInclude>
+    <ClInclude Include="math\randomnumbers\sha1_prf.hpp">
+      <Filter>math\randomnumbers</Filter>
+    </ClInclude>
+    <ClInclude Include="math\randomnumbers\threefry.hpp">
+      <Filter>math\randomnumbers</Filter>
+    </ClInclude>
+    <ClInclude Include="math\randomnumbers\detail\counter_traits.hpp">
+      <Filter>math\randomnumbers\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="math\randomnumbers\detail\mulhilo.hpp">
+      <Filter>math\randomnumbers\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="math\randomnumbers\detail\rotl.hpp">
+      <Filter>math\randomnumbers\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings.hpp" />
+    <ClInclude Include="math\interpolations\sviinterpolation.hpp">
+      <Filter>math\interpolations</Filter>
+    </ClInclude>
+    <ClInclude Include="termstructures\volatility\svi.hpp">
+      <Filter>termstructures\volatility</Filter>
+    </ClInclude>
+    <ClInclude Include="indexes\all.hpp">
+      <Filter>indexes</Filter>
+    </ClInclude>
+    <ClInclude Include="math\randomnumbers\all.hpp">
+      <Filter>math\randomnumbers</Filter>
+    </ClInclude>
+    <ClInclude Include="math\all.hpp">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\interpolations\all.hpp">
+      <Filter>math\interpolations</Filter>
+    </ClInclude>
+    <ClInclude Include="risks\all.hpp">
+      <Filter>risks</Filter>
+    </ClInclude>
+    <ClInclude Include="termstructures\all.hpp">
+      <Filter>termstructures</Filter>
+    </ClInclude>
+    <ClInclude Include="termstructures\volatility\all.hpp">
+      <Filter>termstructures\volatility</Filter>
+    </ClInclude>
+    <ClInclude Include="termstructures\commodity\all.hpp">
+      <Filter>termstructures\commodity</Filter>
+    </ClInclude>
+    <ClInclude Include="termstructures\volatility\doubleexponentialcalibration.hpp">
+      <Filter>termstructures\volatility</Filter>
+    </ClInclude>
+    <ClInclude Include="termstructures\yield\all.hpp">
+      <Filter>termstructures\yield</Filter>
+    </ClInclude>
+    <ClInclude Include="math\interpolations\sabrinterpolation.hpp">
+      <Filter>math\interpolations</Filter>
+    </ClInclude>
+    <ClInclude Include="math\interpolations\xabrinterpolation.hpp">
+      <Filter>math\interpolations</Filter>
+    </ClInclude>
+    <ClInclude Include="math\distributions\all.hpp">
+      <Filter>math\distributions</Filter>
+    </ClInclude>
+    <ClInclude Include="math\distributions\gammadistribution.hpp">
+      <Filter>math\distributions</Filter>
+    </ClInclude>
+    <ClInclude Include="instruments\all.hpp">
+      <Filter>instruments</Filter>
+    </ClInclude>
+    <ClInclude Include="cashflows\all.hpp">
+      <Filter>cashflows</Filter>
+    </ClInclude>
+    <ClInclude Include="cashflows\overnightindexedcoupon.hpp">
+      <Filter>cashflows</Filter>
+    </ClInclude>
+    <ClInclude Include="instruments\iboroisbasisswap.hpp">
+      <Filter>instruments</Filter>
+    </ClInclude>
+    <ClInclude Include="instruments\makeiboroisbasisswap.hpp">
+      <Filter>instruments</Filter>
+    </ClInclude>
+    <ClInclude Include="termstructures\yield\oisbasisratehelper.hpp">
+      <Filter>termstructures\yield</Filter>
+    </ClInclude>
+    <ClInclude Include="termstructures\multibootstrap.hpp">
+      <Filter>termstructures</Filter>
+    </ClInclude>
+    <ClInclude Include="instruments\genericswap.hpp">
+      <Filter>instruments</Filter>
+    </ClInclude>
+    <ClInclude Include="instruments\makegenericswap.hpp">
+      <Filter>instruments</Filter>
+    </ClInclude>
+    <ClInclude Include="indexes\commodityindexext.hpp">
+      <Filter>indexes</Filter>
+    </ClInclude>
+    <ClInclude Include="instruments\dateintervalext.hpp">
+      <Filter>instruments</Filter>
+    </ClInclude>
+    <ClInclude Include="instruments\energybasisswapext.hpp">
+      <Filter>instruments</Filter>
+    </ClInclude>
+    <ClInclude Include="instruments\energycommodityext.hpp">
+      <Filter>instruments</Filter>
+    </ClInclude>
+    <ClInclude Include="instruments\energyfutureext.hpp">
+      <Filter>instruments</Filter>
+    </ClInclude>
+    <ClInclude Include="instruments\energyswapext.hpp">
+      <Filter>instruments</Filter>
+    </ClInclude>
+    <ClInclude Include="instruments\energyvanillaswapext.hpp">
+      <Filter>instruments</Filter>
+    </ClInclude>
+    <ClInclude Include="instruments\pricingperiodext.hpp">
+      <Filter>instruments</Filter>
+    </ClInclude>
+    <ClInclude Include="termstructures\commodity\commoditycurveext.hpp">
+      <Filter>termstructures\commodity</Filter>
+    </ClInclude>
+    <ClInclude Include="qlex.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\SwigConversionLayer\swig\quantlib.i" />
+  </ItemGroup>
+</Project>

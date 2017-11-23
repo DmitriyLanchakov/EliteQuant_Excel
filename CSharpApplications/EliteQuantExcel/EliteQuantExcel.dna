@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="us-ascii"?>
+
+<DnaLibrary Name="EliteQuantExcel" RuntimeVersion="v4.0">
+	<ExternalLibrary Path="EliteQuantExcel.dll" Pack="true" />
+  
+  <!--Some images taht can be used in the Ribon ui-->
+  <!--<Image Name="M" Path="images/m.png" Pack="true"/>-->
+
+  <!-- Below are three CustomUI elements used for different Excel versions.
+       Need not have all three - ExcelDna whatever is most appropriate.
+  -->
+  <CustomUI>
+    <!-- Inside here is the exact RibbonX xml passed to Excel -->
+    <!-- This will only be loaded for Excel 2010 because of the namespace -->
+    <customUI xmlns='http://schemas.microsoft.com/office/2009/07/customui' loadImage='LoadImage'>
+      <ribbon>
+        <tabs>
+          <tab id='EliteQuantTab' label='EliteQuant'>
+            <group id='LoginGroup' label='Login'>
+              <button id='buttonLogin' label='Login' imageMso='Lock' size='large' onAction='RunTagMacro' tag='Login_Click' />
+              <button id='buttonError' label='Display Error Details' imageMso='GroupShowHideListView' size='large' onAction='Error_Click'/>
+            </group>
+            <group id='Workbooks' label='Workbooks'>
+              <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='Demo' label='Demo' imageMso="FunctionsFinancialInsertGallery">
+                <button id='StockTrading' label='StockTrading' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                <button id='HistoricalData' label='HistoricalData' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                <button id='VanillaOptionPricer' label='VanillaOptionPricer' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                <button id='RatesDemo' label='RatesDemo' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+              </menu>
+              <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='Products' label='Products' imageMso="FunctionsFinancialInsertGallery">
+                <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='Rates' label='Rates' imageMso="FunctionsFinancialInsertGallery">
+                  <button id='irWorkbook1' label='irWorkbook1' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                  <button id='irWorkbook2' label='irWorkbook2' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                  <button id='irWorkbook3' label='irWorkbook3' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                </menu>
+                <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='Credit' label='Credit' imageMso="FunctionsFinancialInsertGallery">
+                  <button id='creditWorkbook1' label='creditWorkbook1' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                  <button id='creditWorkbook2' label='creditWorkbook2' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                  <button id='creditWorkbook3' label='creditWorkbook3' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                </menu>
+                <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='Commodity' label='Commodity' imageMso="FunctionsFinancialInsertGallery">
+                  <button id='cmdtyWorkbook1' label='cmdtyWorkbook1' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                  <button id='cmdtyWorkbook2' label='cmdtyWorkbook2' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                  <button id='cmdtyWorkbook3' label='cmdtyWorkbook3' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                </menu>
+                <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='FX' label='FX' imageMso="FunctionsFinancialInsertGallery">
+                  <button id='fxWorkbook1' label='fxWorkbook1' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                  <button id='fxWorkbook2' label='fxWorkbook2' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                  <button id='fxWorkbook3' label='fxWorkbook3' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                </menu>
+              </menu>  <!--end of menu Instruments-->
+              <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='Portfolio' label='Portfolio' imageMso="FunctionsFinancialInsertGallery">
+                <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='Performance' label='Performance' imageMso="FunctionsFinancialInsertGallery">
+                  <button id='perfWorkbook1' label='perfWorkbook1' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                  <button id='perfWorkbook2' label='perfWorkbook2' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                  <button id='perfWorkbook3' label='perfWorkbook3' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                </menu>
+              </menu> <!--end of menu Portfolio-->
+              <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='IRDemo' label='IRDemo' imageMso="FunctionsFinancialInsertGallery">
+                  <button id='BookTrades' label='BookTrades' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                  <button id='LoadHistCurve' label='LoadHistCurve' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                  <button id='PublishCurve' label='PublishCurve' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+              </menu>
+              <!-- end of menu Treasury -->
+              <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='Report' label='Report' imageMso="FunctionsFinancialInsertGallery">
+                <button id='rptWorkbook1' label='rptWorkbook1' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                <button id='rptWorkbook2' label='rptWorkbook2' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                <button id='rptWorkbook3' label='rptWorkbook3' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+              </menu> <!-- end of menu Report -->
+              <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='Risk' label='Risk' imageMso="FunctionsFinancialInsertGallery">
+                <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='MarketRisk' label='MarketRisk' imageMso="FunctionsFinancialInsertGallery">
+                  <button id='riskorkbook1' label='riskorkbook1' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                  <button id='riskorkbook2' label='riskorkbook2' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                  <button id='riskorkbook3' label='riskorkbook3' onAction="excelFile_Click" imageMso="FileSaveAsExcelXlsx"/>
+                </menu>
+              </menu>
+            </group>
+            <group id='functionGroup' label='EliteQuantExcel Functions'>
+              <!--Menu Time-->
+              <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='EQExcelTime' label='Time' imageMso="StartAfterPrevious">
+                <button id='eqTimeNow' label='eqTimeNow' onAction='Function_Click'/>
+                <button id='eqTimeToday' label='eqTimeToday' onAction='Function_Click'/>
+                <button id='eqTimeSetEvaluationDate' label='eqTimeSetEvaluationDate' onAction='Function_Click'/>
+                <button id='eqTimeGetEvaluationDate' label='eqTimeGetEvaluationDate' onAction='Function_Click'/>
+                <button id='eqTimeYearFraction' label='eqTimeYearFraction' onAction='Function_Click'/>
+                <button id='eqTimeBusinessDaysBetween' label='eqTimeBusinessDaysBetween' onAction='Function_Click'/>
+                <button id='eqTimeIsBusinessDay' label='eqTimeYearFraction' onAction='Function_Click'/>
+                <button id='eqTimeAdjustDate' label='eqTimeAdjustDate' onAction='Function_Click'/>
+                <button id='eqTimeAdvanceDate' label='eqTimeAdvanceDate' onAction='Function_Click'/>
+                <button id='eqTimeSchedule' label='eqTimeSchedule' onAction='Function_Click'/>
+              </menu>
+              <!--Menu Math-->
+              <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='EQExcelMath' label='Math' imageMso="TableDesign">
+                <button id='eqMathGenThreefryURng' label='eqMathGenThreefryURng' onAction='Function_Click'/>
+                <button id='eqMathGenThreefryGaussianRng' label='eqMathGenThreefryGaussianRng' onAction='Function_Click'/>
+                <button id='eqMathGenThreefryGammaRng' label='eqMathGenThreefryGammaRng' onAction='Function_Click'/>
+                <button id='eqMathLinearInterpolation' label='eqMathLinearInterpolation' onAction='Function_Click'/>
+                <button id='eqMathLogLinearInterpolation' label='eqMathLogLinearInterpolation' onAction='Function_Click'/>
+                <button id='eqMathGet1DInterpolation' label='eqMathGet1DInterpolation' onAction='Function_Click'/>
+                <button id='eqMathBiLinearInterpolation' label='eqMathBiLinearInterpolation' onAction='Function_Click'/>
+                <button id='eqMathGet2DInterpolation' label='eqMathGet2DInterpolation' onAction='Function_Click'/>
+              </menu>
+              <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='EQExcelModel' label='Model' imageMso="DesignMode">
+                <button id='eqModelSABR' label='eqModelSABR' onAction='Function_Click'/>
+                <button id='eqModelGetSABRCalibratedParameters' label='eqModelGetSABRCalibratedParameters' onAction='Function_Click'/>
+                <button id='eqModelGetSABRInterpolatedValue' label='eqModelGetSABRInterpolatedValue' onAction='Function_Click'/>
+                <button id='eqModelSVI' label='eqModelSVI' onAction='Function_Click'/>
+                <button id='eqModelGetSVICalibratedParameters' label='eqModelGetSVICalibratedParameters' onAction='Function_Click'/>
+                <button id='eqModelGetSVIInterpolatedValue' label='eqModelGetSVIInterpolatedValue' onAction='Function_Click'/>
+                <button id='eqModelDoubleExponentialATM' label='eqModelDoubleExponentialATM' onAction='Function_Click'/>
+                <button id='eqModelGetDoubleExponentialCalibratedParameters' label='eqModelGetDoubleExponentialCalibratedParameters' onAction='Function_Click'/>
+                <button id='eqModelGetDoubleExponentialTermVol' label='eqModelGetDoubleExponentialTermVol' onAction='Function_Click'/>
+                <button id='eqModelDBExponentialATM' label='eqModelDBExponentialATM' onAction='Function_Click'/>
+                <button id='eqModelGetDBExponentialCalibratedParameters' label='eqModelGetDBExponentialCalibratedParameters' onAction='Function_Click'/>
+                <button id='eqModelGetDBExponentialTermVol' label='eqModelGetDBExponentialTermVol' onAction='Function_Click'/>
+              </menu>
+              <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='EQExcelCurve' label='Curve' imageMso="CreateClassModule">
+                <button id='eqRatesCompoundFactor' label='eqRatesCompoundFactor' onAction='Function_Click'/>
+                <button id='eqRatesDiscountFactor' label='eqRatesDiscountFactor' onAction='Function_Click'/>
+                <button id='eqIndexesSetHistory' label='eqIndexesSetHistory' onAction='Function_Click'/>
+                <button id='eqIndexeGetHistory' label='eqIndexeGetHistory' onAction='Function_Click'/>
+                <button id='eqIndexesClearHistory' label='eqIndexesClearHistory' onAction='Function_Click'/>
+                <button id='eqCurveIRFlatForward' label='eqCurveIRFlatForward' onAction='Function_Click'/>
+                <button id='eqCurveIRDiscountCurve' label='eqCurveIRDiscountCurve' onAction='Function_Click'/>
+                <button id='eqCurveIRGetDiscountFactor' label='eqCurveIRGetDiscountFactor' onAction='Function_Click'/>
+                <button id='eqCurveCommodForwardsCurve' label='eqCurveCommodForwardsCurve' onAction='Function_Click'/>
+                <button id='eqCurveCommodDisplayForwardsCurve' label='eqCurveCommodDisplayForwardsCurve' onAction='Function_Click'/>
+                <button id='eqCurveCommodIndex' label='eqCurveCommodIndex' onAction='Function_Click'/>
+                <button id='eqCurveCommodForwardPrice' label='eqCurveCommodForwardPrice' onAction='Function_Click'/>
+              </menu>
+              <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='EQExcelInst' label='Instrument' imageMso="GroupSmartArtQuickStyles">
+                <button id='eqInstEuropeanOptionBlackScholes' label='eqInstEuropeanOptionBlackScholes' onAction='Function_Click'/>
+                <button id='eqInstSpreadOptionKirk' label='eqInstSpreadOptionKirk' onAction='Function_Click'/>
+                <button id='eqInstGetOptionGreeks' label='eqInstGetOptionGreeks' onAction='Function_Click'/>
+                <button id='eqInstCommodityFuture' label='eqInstCommodityFuture' onAction='Function_Click'/>
+                <button id='eqInstCommodityVanillaSwap' label='eqInstCommodityVanillaSwap' onAction='Function_Click'/>
+                <button id='eqInstCommodityBasisSwap' label='eqInstCommodityBasisSwap' onAction='Function_Click'/>
+                <button id='eqInstGetInstrumentNPV' label='eqInstGetInstrumentNPV' onAction='Function_Click'/>
+                <button id='eqInstDisplayEnergySwap' label='eqInstDisplayEnergySwap' onAction='Function_Click'/>
+              </menu>
+              <!--Menu Operation -->
+              <menu xmlns='http://schemas.microsoft.com/office/2009/07/customui' itemSize='normal' id='EQExcelOps' label='Operation' imageMso="SmartArtChangeColorsGallery">
+                <button id='eqOpCheckCallFromWizard' label='eqOpCheckCallFromWizard' onAction='Function_Click'/>
+                <button id='eqOpCallerAddressControl' label='eqOpCallerAddressControl' onAction='Function_Click'/>
+                <button id='eqOpLibXllPath' label='eqOpLibXllPath' onAction='Function_Click'/>
+                <button id='eqOpGetEnumerationList' label='eqOpGetEnumerationList' onAction='Function_Click'/>
+                <button id='eqOpListObjects' label='eqOpListObjects' onAction='Function_Click'/>
+                <button id='eqOpObjectClassName' label='eqOpObjectClassName' onAction='Function_Click'/>
+                <button id='eqOpObjectCallerAddress' label='eqOpObjectCallerAddress' onAction='Function_Click'/>
+                <button id='eqOpObjectCreationTime' label='eqOpObjectCreationTime' onAction='Function_Click'/>
+                <button id='eqOpObjectUpdateTime' label='eqOpObjectUpdateTime' onAction='Function_Click'/>
+                <button id='eqOpLibXllBuildTime' label='eqOpLibXllBuildTime' onAction='Function_Click'/>
+                <button id='eqOpLibXllBuiltBy' label='eqOpLibXllBuiltBy' onAction='Function_Click'/>
+                <button id='eqOpVersion' label='eqOpVersion' onAction='Function_Click'/>
+              </menu>
+            </group>
+            <group id='helpGroup' label='Help'>
+              <button id='buttonReadData' label='Retrieve Data' imageMso="FilePublishExcelServices" size='large' onAction='RunTagMacro' tag='ReadData_Click' />
+              <button id='buttonHelper' label='Help Context' imageMso='ShapeBasicsHelp' size='large' onAction='Help_Click'/>
+              <button id='buttonAbout' label='About EliteQuant' imageMso="AddOrRemoveAttendees" size ='large' onAction='About_Click'/>
+            </group>
+          </tab>
+        </tabs>
+      </ribbon>
+    </customUI>
+  </CustomUI>
+</DnaLibrary>
